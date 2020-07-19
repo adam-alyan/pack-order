@@ -2,7 +2,7 @@
 
 $arrayPacks = [250, 500, 1000, 2000, 5000];
 arsort($arrayPacks);
-$requestNoWidgets = 251;
+$requestNoWidgets = 501;
 $packsToSend = efficientPackSizes($requestNoWidgets, $arrayPacks);
 
 print_r($packsToSend);
@@ -21,7 +21,7 @@ function efficientPackSizes($requestNoWidgets, $arrayPacks = array()){
     
     if($needBig){
       $packsToSend[] = $needBig;
-    
+      $remainingWidgets = $remainingWidgets - $needBig;    
     } else {
     
      $nextpacksize = getPackSize($remainingWidgets, $arrayPacks);
