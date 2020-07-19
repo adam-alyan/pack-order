@@ -105,9 +105,9 @@ function packOrder($requestNoWidgets, $arrayPacks){
   $remainingWidgets = $requestNoWidgets;
     
   while($remainingWidgets > 0){
-    
+    echo "loop count" . "\n";
     $nextpacksize = getNextPackSize2($remainingWidgets, $arrayPacks);
-    $lastpacksize = $nextpacksize;
+    //$lastpacksize = $nextpacksize;
     $remainingWidgets = $remainingWidgets - $nextpacksize;
     
         
