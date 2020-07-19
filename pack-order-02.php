@@ -9,7 +9,6 @@ arsort($packsArray);
 
 // test
 $tests = [1, 250, 251, 501, 12001, 15251];
-//$tests = [12001];
  
 foreach($tests as $test){
   echo "Testing: " . $test . "\n";
@@ -35,19 +34,13 @@ function packOrder($requestNoItems, $packsArray){
   $packsToSend = array();
   
   foreach($packsArray as $packSize){ 
-    //echo '$remainder: ' . "$remainder\n";
-    //echo '$packSize: ' . "$packSize\n";
     // number of packs of this size
     $numOfPacks = floor($remainder * $initialPack['packSize'] / $packSize );
-    //echo "calc: "  . $remainder / $packSize * $initialPack['packSize'] . "\n";
-    //echo '$numOfPacks: ' . "$numOfPacks\n";
-    //echo 'other: ' . $numOfPacks * $packSize / $initialPack['packSize'] . "\n\n";
     // remainder as number of pack sizes
     $remainder = $remainder - $numOfPacks * $packSize / $initialPack['packSize'];
     // add to order array
     if($numOfPacks != 0) $packsToSend[$packSize] = $numOfPacks;    
   }
-  //print_r($packsToSend);
   return $packsToSend;
 }
 
@@ -60,7 +53,6 @@ function getInitialPackSize($noItems, $packs){
     $initialPacks[$extraItemsInPacks] = array('packSize' => $pack, 'numOfPacks' => $numOfPacks);    
   }
   arsort($initialPacks);
-  //print_r($initialPacks);
   return end($initialPacks);
 }
 
