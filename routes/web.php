@@ -22,5 +22,5 @@ Route::get('/', function () {
 //     return view('order');
 // });
 
-Route::get('/order/{productId}', 'order@show');
-Route::post('/order/{productId}', 'order@store');
+Route::get('/order/{productId}', 'Order@show');
+Route::post('/order/{productId}', 'Order@store');
