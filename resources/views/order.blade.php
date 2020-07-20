@@ -84,7 +84,7 @@
                         </p>
                     </div>                    
 
-                    @unless($noItems)
+                    
                         <div>
                             <h3>Order Form</h3>
                             <form method="post" action='{!! url('/order'); !!}/{{$productId}}'>
@@ -99,7 +99,7 @@
                                 <Span style="color:red;">{{ $error }}</span>
                             @endisset
                         <div>                
-                    @endunless
+                    
                     @isset($packsToSend)
                         <div>
                             <h3>Thank you for your order.</h3> 
